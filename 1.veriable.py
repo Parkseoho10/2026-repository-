@@ -27,10 +27,10 @@ questions1 = {"no": 1, "question" : "답을구하시오", "answer": 153, "score"
 
 print("questions1의 답은? ", questions1["answer"])
 
-qusetions = [{"no": 2, "question" : "답으로 올바른 것을 구하시오", "answer": 3, "score": 5, "isMultipleChoice": True}, "example" : [50, 30, 35]
-             {"no": 3, "question" : "답으로 올바른 것을 구하시오", "answer": 4, "score": 5, "isMultipleChoice": True}, "example" : [50, 30, 35]
-             {"no": 4, "question" : "답으로 올바른 것을 구하시오", "answer": 3, "score": 5, "isMultipleChoice": True}, "example" : [50, 30, 35]
-             {"no": 5, "question" : "답으로 올바른 것을 구하시오", "answer": 1, "score": 5, "isMultipleChoice": True}] "example" : [50, 30, 35]
+qusetions = [{"no": 2, "question" : "답으로 올바른 것을 구하시오", "answer": 3, "score": 5, "isMultipleChoice": True, "example": [50, 30, 35]},
+             {"no": 3, "question" : "답으로 올바른 것을 구하시오", "answer": 4, "score": 5, "isMultipleChoice": True, "example": [50, 30, 35]},
+             {"no": 4, "question" : "답으로 올바른 것을 구하시오", "answer": 3, "score": 5, "isMultipleChoice": True, "example": [50, 30, 35]},
+             {"no": 5, "question" : "답으로 올바른 것을 구하시오", "answer": 1, "score": 5, "isMultipleChoice": True, "example": [50, 30, 35]}]
 
 print(qusetions[1])
 print(qusetions[1]["example"])
