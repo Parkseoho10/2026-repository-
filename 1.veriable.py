@@ -19,3 +19,22 @@ print(a)
 
 input_var = input("숫자를 하나 입력하세요")
 print(input_var)
+
+# dictionary
+
+
+questions1 = {"no": 1, "question" : "답을구하시오", "answer": 153, "score": 5, "isMultipleChoice": False}
+
+print("questions1의 답은? ", questions1["answer"])
+
+qusetions = [{"no": 2, "question" : "답으로 올바른 것을 구하시오", "answer": 3, "score": 5, "isMultipleChoice": True},
+             {"no": 3, "question" : "답으로 올바른 것을 구하시오", "answer": 4, "score": 5, "isMultipleChoice": True},
+             {"no": 4, "question" : "답으로 올바른 것을 구하시오", "answer": 3, "score": 5, "isMultipleChoice": True},
+             {"no": 5, "question" : "답으로 올바른 것을 구하시오", "answer": 1, "score": 5, "isMultipleChoice": True}]
+
+print(qusetions[1])
+print(qusetions[1]["example"])
+print(qusetions[1]["example"][0])
+
+no2_example = qusetions[1]["example"]
+print(no2_example[0])
