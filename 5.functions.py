@@ -7,13 +7,13 @@ movies = [
 ]
 
 def retrieve_rating():
-    user_input = int(input("평점 몇 이상의 영화를 조회하시겠습니까?"))
+    user_input = float(input("평점 몇 이상의 영화를 조회하시겠습니까?"))
     print("[평점",user_input," 이상 영화]")
     for movie in movies:
         if movie["rating"] > user_input:
             print("- ", movie["title"])
 
-def total_movie_views():
+def retrieve_total_movie_views():
     total_animation_views = 0
     for movie in movies:
         if movie["genre"] == "애니메이션":
@@ -61,19 +61,24 @@ def external_api_update_movie():
         {"title": "토이 스토리 5", "genre": "애니메이션", "rating": 8.7, "views": 295},
     ]
 
-def updated_movie():
+def update_movie():
     global movies
     updated_movies = external_api_update_movie()
 
     for movie in updated_movies:
+       is_exist = False
        for existing_movie in movies:
            if movie["title"] == existing_movie["title"]:
-               movie["rating"] = existing_movie["rating"]
-               movie["views"] = existing_movie["views"]
-               is_exist = True
-               break
+              movie["rating"] = existing_movie["rating"]
+              movie["views"] = existing_movie["views"]
+              is_exist = True
+              break
        if is_exist == False:
             movies.append(movie)
+
+
+
+    print(movies)
 
 
 
@@ -101,7 +106,7 @@ while True:
     elif choice == 4:
         search_movie()
     elif choice == 5:
-        updated_movie()
+        update_movie()
     else:
         print("잘못된 입력입니다!!.")
 
