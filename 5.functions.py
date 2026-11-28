@@ -68,9 +68,9 @@ def update_movie():
     for movie in updated_movies:
        is_exist = False
        for existing_movie in movies:
-           if movie["title"] == existing_movie["title"]:
-              movie["rating"] = existing_movie["rating"]
-              movie["views"] = existing_movie["views"]
+           if existing_movie["title"] == movie["title"]:
+              existing_movie["rating"] = movie["rating"]
+              existing_movie["views"] = movie["views"]
               is_exist = True
               break
        if is_exist == False:
