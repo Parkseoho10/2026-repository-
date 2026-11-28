@@ -31,11 +31,34 @@ def retrieve_max_views_movie():
     print("[최다 조회수의 영화]")
     print(max_title, ":", max_views)
 
+def search_movie_by_title(keyword):
+    searched_movie = []
+    for movie in movies:
+        if movie["title"].find(keyword) >= 0:
+            searched_movie.append(movie)
+    return searched_movie
+
+def search_movie_by_genre(keyword):
+    searched_movie = []
+    for movie in movies:
+        if movie["genre"] == keyword:
+            searched_movie.append(movie)
+    return searched_movie
+
+def search_movie():
+    keyword = input("검색할 영화를 입력하세요")
+    searched_movies_by_title = search_movie_by_title(keyword)
+    searched_movies_by_genre = search_movie_by_genre(keyword)
+    print(keyword, "가 이름으로 검색", searched_movies_by_title)
+    print("--------------------")
+    print(keyword, "장르로 검색된 영화", searched_movies_by_genre)
+
 while True:
     print("====================")
     print("1. 평점 기준 조회")
     print("2. 장르별 누적조회수 조회")
     print("3. 최다 조회수 영화 조회")
+    print("4. 영화 검색하기")
     print("0. 종료하기")
     print("====================")
 
@@ -49,6 +72,8 @@ while True:
         total_movie_views()
     elif choice == 3:
        retrieve_max_views_movie()
+    elif choice == 4:
+        search_movie()
     else:
         print("잘못된 입력입니다!!.")
 
